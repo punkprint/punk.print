@@ -17,142 +17,149 @@ body{margin:0;font-family:Inter,sans-serif;background:#fbfbfb;color:#111}
 @media(max-width:980px){.hero{flex-direction:column}}
 .cases{margin-top:40px}
 .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.case{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee}
-.case a{text-decoration:none;color:inherit;display:block}
+.case{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee;cursor:pointer}
 .case img{width:100%;height:300px;object-fit:cover}
 .case .inner{padding:16px}
 .kicker{font-size:12px;color:#6c6c6c;text-transform:uppercase;letter-spacing:.08em}
 .case h3{margin:8px 0 6px;font-size:18px}
 .case p{margin:0;color:#6c6c6c;font-size:14px}
 @media(max-width:980px){.case-grid{grid-template-columns:1fr}}
+/* Лайтбокс */
+#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;flex-direction:column}
+#lightbox img{max-width:90%;max-height:70%;border-radius:12px;margin-bottom:16px}
+#lightbox .caption{color:#fff;text-align:center;margin-bottom:12px;font-size:16px}
+#lightbox .close{position:absolute;top:20px;right:30px;color:#fff;font-size:30px;font-weight:bold;cursor:pointer}
+#lightbox .nav-btn{position:absolute;top:50%;transform:translateY(-50%);font-size:50px;color:#fff;font-weight:bold;cursor:pointer;user-select:none}
+#lightbox .prev{left:20px}
+#lightbox .next{right:20px}
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">АЯ</div>
-    <nav class="nav">
-      <a href="#top">Главная</a>
-      <a href="#work">Работы</a>
-      <a href="#about">Обо мне</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-  </header>
+<header class="header">
+<div class="logo">АЯ</div>
+<nav class="nav">
+  <a href="#top">Главная</a>
+  <a href="#work">Работы</a>
+  <a href="#about">Обо мне</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+</header>
 
-  <!-- Hero / Обо мне -->
-  <section class="hero" id="top">
-    <div class="hero-text">
-      <h1>Андрей Яроцкий</h1>
-      <p>Графический дизайнер — брендинг, полиграфия, мерч</p>
-      <p>Опыт: 8+ лет</p>
-      <p>Телефон: +7 995 607 94 74</p>
-      <p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
-      <p>Behance / Instagram / Telegram: punk.print</p>
-    </div>
-    <div class="hero-photo">
-      <img src="https://source.unsplash.com/400x400/?portrait,designer" alt="Андрей Яроцкий">
-    </div>
-  </section>
+<section class="hero" id="top">
+<div class="hero-text">
+<h1>Андрей Яроцкий</h1>
+<p>Графический дизайнер — брендинг, веб, мерч, полиграфия</p>
+<p>Опыт: Больше 10 лет в професси и на рынке</p>
+<p>Телефон: +7 995 607 94 74</p>
+<p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
+<p>Behance / Instagram / Telegram: @punk.print</p>
+</div>
+<div class="hero-photo">
+<img src="https://source.unsplash.com/400x400/?portrait,designer" alt="Андрей Яроцкий">
+</div>
+</section>
 
-  <!-- Кейсы -->
-  <section id="work" class="cases">
-    <h2>Ключевые кейсы</h2>
-    <div class="case-grid">
+<section id="work" class="cases">
+<h2>Ключевые кейсы</h2>
+<div class="case-grid">
 
-      <article class="case">
-        <a href="case1.html">
-          <img src="https://source.unsplash.com/600x400/?merch,poster1" alt="Кейс 1">
-          <div class="inner">
-            <div class="kicker">Ребрендинг</div>
-            <h3>Ребрендинг мерча</h3>
-            <p>Задача: обновить визуальную линию мерча и подготовить макеты под печать.</p>
-          </div>
-        </a>
-      </article>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?merch,poster1","https://source.unsplash.com/800x500/?merch,poster2"]' data-caption="Ребрендинг мерча — обновление визуальной линии мерча.">
+<img src="https://source.unsplash.com/600x400/?merch,poster1" alt="Кейс 1">
+<div class="inner"><div class="kicker">Ребрендинг</div><h3>Ребрендинг мерча</h3><p>Краткое описание проекта...</p></div>
+</div>
 
-      <article class="case">
-        <a href="case2.html">
-          <img src="https://source.unsplash.com/600x400/?packaging,design2" alt="Кейс 2">
-          <div class="inner">
-            <div class="kicker">Packaging</div>
-            <h3>Упаковка для локального бренда</h3>
-            <p>Создание серийной упаковки и подготовка dielines для печати.</p>
-          </div>
-        </a>
-      </article>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?packaging,design2","https://source.unsplash.com/800x500/?packaging,design3"]' data-caption="Упаковка для локального бренда — серия упаковки и dielines.">
+<img src="https://source.unsplash.com/600x400/?packaging,design2" alt="Кейс 2">
+<div class="inner"><div class="kicker">Packaging</div><h3>Упаковка для бренда</h3><p>Краткое описание проекта...</p></div>
+</div>
 
-      <article class="case">
-        <a href="case3.html">
-          <img src="https://source.unsplash.com/600x400/?poster,graphic3" alt="Кейс 3">
-          <div class="inner">
-            <div class="kicker">Кампании</div>
-            <h3>Кампанийный визуал и материалы</h3>
-            <p>Разработка серии плакатов и POS-материалов для оффлайн и digital.</p>
-          </div>
-        </a>
-      </article>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?poster,graphic3","https://source.unsplash.com/800x500/?poster,graphic4"]' data-caption="Кампанийный визуал — серия плакатов для оффлайн и digital.">
+<img src="https://source.unsplash.com/600x400/?poster,graphic3" alt="Кейс 3">
+<div class="inner"><div class="kicker">Кампании</div><h3>Кампанийный визуал</h3><p>Краткое описание проекта...</p></div>
+</div>
 
-      <article class="case">
-        <a href="case4.html">
-          <img src="https://source.unsplash.com/600x400/?design,art4" alt="Кейс 4">
-          <div class="inner">
-            <div class="kicker">Branding</div>
-            <h3>Брендинг для стартапа</h3>
-            <p>Создание логотипа и визуальной идентичности.</p>
-          </div>
-        </a>
-      </article>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?design,art4","https://source.unsplash.com/800x500/?design,art5"]' data-caption="Брендинг для стартапа — логотип и визуальная идентичность.">
+<img src="https://source.unsplash.com/600x400/?design,art4" alt="Кейс 4">
+<div class="inner"><div class="kicker">Branding</div><h3>Брендинг для стартапа</h3><p>Краткое описание проекта...</p></div>
+</div>
 
-      <article class="case">
-        <a href="case5.html">
-          <img src="https://source.unsplash.com/600x400/?illustration,art5" alt="Кейс 5">
-          <div class="inner">
-            <div class="kicker">Иллюстрации</div>
-            <h3>Иллюстрации для кампании</h3>
-            <p>Создание визуальных материалов и графики для digital и print.</p>
-          </div>
-        </a>
-      </article>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?illustration,art5","https://source.unsplash.com/800x500/?illustration,art6"]' data-caption="Иллюстрации для кампании — digital и print.">
+<img src="https://source.unsplash.com/600x400/?illustration,art5" alt="Кейс 5">
+<div class="inner"><div class="kicker">Иллюстрации</div><h3>Иллюстрации</h3><p>Краткое описание проекта...</p></div>
+</div>
 
-      <article class="case">
-        <a href="case6.html">
-          <img src="https://source.unsplash.com/600x400/?graphic,art6" alt="Кейс 6">
-          <div class="inner">
-            <div class="kicker">Digital</div>
-            <h3>Визуал для соцсетей</h3>
-            <p>Разработка графики и визуальных шаблонов для Instagram и VK.</p>
-          </div>
-        </a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- About / Skills -->
-  <section id="about" style="margin-top:40px">
-    <h3>Обо мне</h3>
-    <p>Я — Андрей Яроцкий. Специализируюсь на брендинге, полиграфии и мерче. Руководил дизайном, знаю тонкости допечатной подготовки и взаимодействия с типографиями.</p>
-    <h4>Навыки</h4>
-    <ul>
-      <li>Adobe Illustrator</li>
-      <li>Adobe Photoshop</li>
-      <li>Adobe InDesign (prepress)</li>
-      <li>Figma</li>
-      <li>Mockups & dielines</li>
-      <li>Production control</li>
-    </ul>
-  </section>
-
-  <!-- Contacts -->
-  <section id="contacts" style="margin-top:40px">
-    <h3>Контакты</h3>
-    <p>Телефон: +7 995 607 94 74</p>
-    <p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
-    <p>Behance / Instagram / Telegram: punk.print</p>
-  </section>
+<div class="case" data-images='["https://source.unsplash.com/800x500/?graphic,art6","https://source.unsplash.com/800x500/?graphic,art7"]' data-caption="Визуал для соцсетей — шаблоны и графика.">
+<img src="https://source.unsplash.com/600x400/?graphic,art6" alt="Кейс 6">
+<div class="inner"><div class="kicker">Digital</div><h3>Визуал для соцсетей</h3><p>Краткое описание проекта...</p></div>
+</div>
 
 </div>
+</section>
+
+<section id="about" style="margin-top:40px">
+<h3>Обо мне</h3>
+<p>Я — Андрей Яроцкий. Специализируюсь на брендинге, полиграфии и мерче. Руководил дизайном, знаю тонкости допечатной подготовки и взаимодействия с типографиями.</p>
+<h4>Навыки</h4>
+<ul>
+<li>Adobe Illustrator</li>
+<li>Adobe Photoshop</li>
+<li>Adobe InDesign (prepress)</li>
+<li>Figma</li>
+<li>Mockups & dielines</li>
+<li>Production control</li>
+</ul>
+</section>
+
+<section id="contacts" style="margin-top:40px">
+<h3>Контакты</h3>
+<p>Телефон: +7 995 607 94 74</p>
+<p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
+<p>Behance / Instagram / Telegram: punk.print</p>
+</section>
+
+</div>
+
+<!-- Лайтбокс -->
+<div id="lightbox">
+<span class="close">&times;</span>
+<img src="" alt="Кейс">
+<div class="caption"></div>
+<span class="nav-btn prev">&#10094;</span>
+<span class="nav-btn next">&#10095;</span>
+</div>
+
+<script>
+let currentImages = [], currentIndex=0;
+const cases = document.querySelectorAll('.case');
+const lightbox = document.getElementById('lightbox');
+const lbImg = lightbox.querySelector('img');
+const lbCaption = lightbox.querySelector('.caption');
+const closeBtn = lightbox.querySelector('.close');
+const prevBtn = lightbox.querySelector('.prev');
+const nextBtn = lightbox.querySelector('.next');
+
+cases.forEach(c=>c.addEventListener('click',()=>{
+  currentImages = JSON.parse(c.getAttribute('data-images'));
+  currentIndex=0;
+  lbImg.src=currentImages[currentIndex];
+  lbCaption.textContent=c.getAttribute('data-caption');
+  lightbox.style.display='flex';
+}));
+
+closeBtn.addEventListener('click',()=>lightbox.style.display='none');
+lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.style.display='none'});
+
+prevBtn.addEventListener('click',()=>{
+  currentIndex = (currentIndex-1+currentImages.length)%currentImages.length;
+  lbImg.src=currentImages[currentIndex];
+});
+nextBtn.addEventListener('click',()=>{
+  currentIndex = (currentIndex+1)%currentImages.length;
+  lbImg.src=currentImages[currentIndex];
+});
+</script>
+
 </body>
 </html>
