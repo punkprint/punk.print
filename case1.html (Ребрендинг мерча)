@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кейс 1 — Ребрендинг мерча | Андрей Яроцкий</title>
+<style>
+body{margin:0;font-family:Inter,sans-serif;background:#fbfbfb;color:#111}
+.container{max-width:900px;margin:0 auto;padding:32px}
+a{color:#111;text-decoration:none;font-weight:600}
+h1,h2,h3{margin:0 0 16px 0}
+img{max-width:100%;border-radius:12px;margin-bottom:16px;object-fit:cover}
+.back-link{margin-bottom:24px;display:inline-block}
+.section{margin-bottom:32px}
+.kicker{font-size:12px;color:#6c6c6c;text-transform:uppercase;letter-spacing:.08em}
+.metrics, .process{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.metric, .step{background:#f6f6f6;padding:8px 12px;border-radius:10px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="index.html">&larr; Вернуться на главную</a>
+  <section class="section">
+    <div class="kicker">Ребрендинг</div>
+    <h1>Ребрендинг мерча</h1>
+    <p>Задача: обновить визуальную линию мерча, подготовить макеты под печать и согласовать с типографиями.</p>
+  </section>
+  <section class="section">
+    <h2>Галерея проекта</h2>
+    <img src="https://source.unsplash.com/800x500/?merch,poster1" alt="Мерч 1">
+    <img src="https://source.unsplash.com/800x500/?merch,poster2" alt="Мерч 2">
+    <img src="https://source.unsplash.com/800x500/?merch,poster3" alt="Мерч 3">
+  </section>
+  <section class="section">
+    <h2>Результаты</h2>
+    <div class="metrics">
+      <div class="metric">+28% продаж мерча</div>
+      <div class="metric">Сокращение брака на 15%</div>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Процесс работы</h2>
+    <div class="process">
+      <div class="step">Исследование</div>
+      <div class="step">Дизайн</div>
+      <div class="step">Подготовка к печати</div>
+      <div class="step">Производство</div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
