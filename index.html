@@ -1,262 +1,158 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Андрей Яроцкий — графический дизайнер (punk.print)</title>
-
-<!-- Basic SEO / OG -->
-<meta name="description" content="Андрей Яроцкий — графический дизайнер. Брендинг, полиграфия, мерч. Резюме и кейсы для найма." />
-<meta property="og:title" content="Андрей Яроцкий — графический дизайнер" />
-<meta property="og:description" content="Брендинг, полиграфия, мерч. Резюме и кейсы для найма." />
-<meta property="og:image" content="https://source.unsplash.com/1200x630/?design,print" />
-<meta property="og:type" content="profile" />
-
-<!-- Simple modern styles -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Андрей Яроцкий — графический дизайнер</title>
 <style>
-:root{
-  --accent:#111;
-  --muted:#6c6c6c;
-  --bg:#fbfbfb;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--accent);
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:Inter,sans-serif;background:#fbfbfb;color:#111}
 .container{max-width:1120px;margin:0 auto;padding:32px}
-
-.header{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0;
-}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{
-  width:64px;height:64px;border-radius:12px;background:#111;color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px;
-}
-.nav{display:flex;gap:10px;align-items:center}
-a.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #e6e6e6;text-decoration:none;color:var(--accent);font-weight:600}
-
-.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:28px 0}
-.title{font-size:clamp(26px,5vw,42px);line-height:1.02;margin:0}
-.lead{color:var(--muted);margin-top:12px;font-size:15px}
-.badges{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
-.badge{background:#fff;padding:8px 10px;border-radius:999px;border:1px solid #eee;font-size:13px;color:var(--muted)}
-.cta-card{background:linear-gradient(180deg,#fff, #fbfbfb);border-radius:12px;padding:18px;border:1px solid #eee}
-.cta-card h4{margin:0 0 8px 0}
-.kv{display:flex;gap:12px;align-items:center;margin-top:12px}
-.kv strong{display:block;font-size:20px}
-.kv span{color:var(--muted);font-size:13px}
-
-.cases{margin-top:28px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0}
+.logo{width:64px;height:64px;background:#111;color:#fff;display:grid;place-items:center;border-radius:12px;font-weight:700;font-size:18px}
+.nav a{margin-left:12px;text-decoration:none;color:#111;font-weight:600}
+.hero{display:flex;gap:24px;align-items:center;margin-top:32px}
+.hero-text{flex:1}
+.hero-photo{flex:1}
+.hero-photo img{width:100%;border-radius:12px;object-fit:cover}
+@media(max-width:980px){.hero{flex-direction:column}}
+.cases{margin-top:40px}
 .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.case{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee;cursor:pointer}
-.case .visual{height:300px;background:#ddd;display:block;width:100%;object-fit:cover}
+.case{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee}
+.case a{text-decoration:none;color:inherit;display:block}
+.case img{width:100%;height:300px;object-fit:cover}
 .case .inner{padding:16px}
-.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.kicker{font-size:12px;color:#6c6c6c;text-transform:uppercase;letter-spacing:.08em}
 .case h3{margin:8px 0 6px;font-size:18px}
-.case p{margin:0;color:var(--muted);font-size:14px}
-.metrics{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-.metric{background:#f6f6f6;padding:8px 10px;border-radius:10px;font-weight:700}
-.process{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-.step{padding:8px 10px;border-radius:8px;background:#fff;border:1px solid #eee;font-size:13px}
-
-.skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-.skill{padding:8px 12px;border-radius:999px;border:1px solid #eee;font-size:13px;color:var(--muted)}
-
-.about{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:28px}
-.profile-photo{width:100%;height:100%;border-radius:12px;object-fit:cover}
-.contact-card{background:#fff;padding:16px;border-radius:12px;border:1px solid #eee}
-.download{display:block;margin-top:12px;padding:10px 12px;border-radius:10px;text-decoration:none;background:#111;color:#fff;text-align:center;width:100%}
-
-footer{margin-top:40px;padding:20px 0;color:var(--muted);font-size:14px;text-align:center}
-
-@media (max-width:980px){
-  .hero{grid-template-columns:1fr}
-  .case-grid{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr}
-  .cta-card{order:2}
-}
+.case p{margin:0;color:#6c6c6c;font-size:14px}
+@media(max-width:980px){.case-grid{grid-template-columns:1fr}}
 </style>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Person",
-  "name":"Андрей Яроцкий",
-  "url":"https://example.com",
-  "sameAs":["https://www.behance.net/punk_print","https://www.instagram.com/punk.print/","https://t.me/punk_print"],
-  "jobTitle":"Графический дизайнер",
-  "worksFor":{"@type":"Organization","name":"punk.print"}
-}
-</script>
 </head>
 <body>
 <div class="container">
 
   <!-- Header -->
   <header class="header">
-    <div class="brand">
-      <div class="logo">ЯА</div>
-      <div>
-        <div style="font-weight:700">Андрей Яроцкий</div>
-        <div style="font-size:13px;color:var(--muted)">Графический дизайнер — брендинг · полиграфия · мерч</div>
-      </div>
-    </div>
+    <div class="logo">АЯ</div>
     <nav class="nav">
-      <a class="btn" href="#work">Работы</a>
-      <a class="btn" href="#about">Обо мне</a>
-      <a class="btn" href="#contacts">Контакты</a>
-      <a class="btn" href="https://spb.hh.ru/resume/2ea4ea49ff0df6faf00039ed1f317730574232" target="_blank">Резюме (hh.ru)</a>
+      <a href="#top">Главная</a>
+      <a href="#work">Работы</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contacts">Контакты</a>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero / Обо мне -->
   <section class="hero" id="top">
-    <div>
-      <h1 class="title">Ведущий графический дизайнер — брендинг, полиграфия, мерч</h1>
-      <p class="lead">Готов взять роль Senior/Middle+ в дизайн-отделе: управление печатью, подготовка техзаданий, руководство production. Демонстрирую результат через метрики и реальный эффект для бизнеса.</p>
-      <div class="badges">
-        <div class="badge">Опыт: 8+ лет</div>
-        <div class="badge">Готовность к удалённой/офисной работе</div>
-        <div class="badge">Специализация: packaging & print</div>
-      </div>
-      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="#work">Смотреть кейсы</a>
-        <a class="btn" href="#contacts">Откликнуться</a>
-        <a class="btn" href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">Написать</a>
-      </div>
+    <div class="hero-text">
+      <h1>Андрей Яроцкий</h1>
+      <p>Графический дизайнер — брендинг, полиграфия, мерч</p>
+      <p>Опыт: 8+ лет</p>
+      <p>Телефон: +7 995 607 94 74</p>
+      <p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
+      <p>Behance / Instagram / Telegram: punk.print</p>
     </div>
-
-    <aside class="cta-card">
-      <h4>Коротко обо мне</h4>
-      <div style="font-size:14px;color:var(--muted)">Руководил дизайном печатных кампаний, контролировал допечатную подготовку и цветопередачу. Опыт сотрудничества с производствами и рекламными агентствами.</div>
-      <div class="kv">
-        <div>
-          <strong>+7 995 607 94 74</strong>
-          <span>Телефон</span>
-        </div>
-      </div>
-      <div class="kv">
-        <div>
-          <strong>punk.print</strong>
-          <span>Behance / Instagram / Telegram</span>
-        </div>
-      </div>
-      <a class="download" href="https://spb.hh.ru/resume/2ea4ea49ff0df6faf00039ed1f317730574232" target="_blank">Скачать резюме (hh.ru)</a>
-    </aside>
+    <div class="hero-photo">
+      <img src="https://source.unsplash.com/400x400/?portrait,designer" alt="Андрей Яроцкий">
+    </div>
   </section>
 
-  <!-- Cases -->
+  <!-- Кейсы -->
   <section id="work" class="cases">
     <h2>Ключевые кейсы</h2>
-    <p style="color:var(--muted);margin-top:6px">6 кейсов, показывающих процесс: задача → решение → результат (KPI / роль / вклад).</p>
     <div class="case-grid">
 
-      <!-- Шесть кейсов с Unsplash placeholder -->
-      <article class="case" data-title="Кейс 1">
-        <img class="visual" src="https://source.unsplash.com/600x400/?merch,poster1" alt="Кейс 1">
-        <div class="inner">
-          <div class="kicker">Ребрендинг</div>
-          <h3>Ребрендинг мерча</h3>
-          <p>Задача: обновить визуальную линию мерча и подготовить макеты под печать. Роль: lead designer, контроль допечатной подготовки.</p>
-          <div class="metrics"><div class="metric">+28% продаж мерча</div><div class="metric">Сокращение брака на 15%</div></div>
-          <div class="process"><span class="step">Исследование</span><span class="step">Дизайн</span><span class="step">Подготовка к печати</span><span class="step">Производство</span></div>
-        </div>
+      <article class="case">
+        <a href="case1.html">
+          <img src="https://source.unsplash.com/600x400/?merch,poster1" alt="Кейс 1">
+          <div class="inner">
+            <div class="kicker">Ребрендинг</div>
+            <h3>Ребрендинг мерча</h3>
+            <p>Задача: обновить визуальную линию мерча и подготовить макеты под печать.</p>
+          </div>
+        </a>
       </article>
 
-      <article class="case" data-title="Кейс 2">
-        <img class="visual" src="https://source.unsplash.com/600x400/?packaging,design2" alt="Кейс 2">
-        <div class="inner">
-          <div class="kicker">Packaging</div>
-          <h3>Упаковка для локального бренда</h3>
-          <p>Создание серийной упаковки, подготовка dielines и mockups, коммуникация с типографией.</p>
-          <div class="metrics"><div class="metric">Увеличение shelf-appeal</div><div class="metric">Оптимизация макета: -12% материалов</div></div>
-          <div class="process"><span class="step">Арт-дирекция</span><span class="step">Dielines</span><span class="step">Цветокалибровка</span></div>
-        </div>
+      <article class="case">
+        <a href="case2.html">
+          <img src="https://source.unsplash.com/600x400/?packaging,design2" alt="Кейс 2">
+          <div class="inner">
+            <div class="kicker">Packaging</div>
+            <h3>Упаковка для локального бренда</h3>
+            <p>Создание серийной упаковки и подготовка dielines для печати.</p>
+          </div>
+        </a>
       </article>
 
-      <article class="case" data-title="Кейс 3">
-        <img class="visual" src="https://source.unsplash.com/600x400/?poster,graphic3" alt="Кейс 3">
-        <div class="inner">
-          <div class="kicker">Кампании</div>
-          <h3>Кампанийный визуал и материалы</h3>
-          <p>Разработка серии плакатов и POS-материалов, адаптация под разные носители и подготовка печатных PDF.</p>
-          <div class="metrics"><div class="metric">Конверсия оффера</div><div class="metric">Снижение времени подготовки на 20%</div></div>
-          <div class="process"><span class="step">Концепт</span><span class="step">Адаптация</span><span class="step">Файлы в типографии</span></div>
-        </div>
+      <article class="case">
+        <a href="case3.html">
+          <img src="https://source.unsplash.com/600x400/?poster,graphic3" alt="Кейс 3">
+          <div class="inner">
+            <div class="kicker">Кампании</div>
+            <h3>Кампанийный визуал и материалы</h3>
+            <p>Разработка серии плакатов и POS-материалов для оффлайн и digital.</p>
+          </div>
+        </a>
       </article>
 
-      <article class="case" data-title="Кейс 4">
-        <img class="visual" src="https://source.unsplash.com/600x400/?design,art4" alt="Кейс 4">
-        <div class="inner">
-          <div class="kicker">Branding</div>
-          <h3>Брендинг для стартапа</h3>
-          <p>Создание логотипа, цветовой палитры и визуальной идентичности.</p>
-          <div class="metrics"><div class="metric">+15% узнаваемость бренда</div></div>
-          <div class="process"><span class="step">Исследование</span><span class="step">Дизайн</span><span class="step">Реализация</span></div>
-        </div>
+      <article class="case">
+        <a href="case4.html">
+          <img src="https://source.unsplash.com/600x400/?design,art4" alt="Кейс 4">
+          <div class="inner">
+            <div class="kicker">Branding</div>
+            <h3>Брендинг для стартапа</h3>
+            <p>Создание логотипа и визуальной идентичности.</p>
+          </div>
+        </a>
       </article>
 
-      <article class="case" data-title="Кейс 5">
-        <img class="visual" src="https://source.unsplash.com/600x400/?illustration,art5" alt="Кейс 5">
-        <div class="inner">
-          <div class="kicker">Иллюстрации</div>
-          <h3>Иллюстрации для кампании</h3>
-          <p>Создание визуальных материалов и графики для digital и print.</p>
-          <div class="metrics"><div class="metric">+40% вовлеченность аудитории</div></div>
-          <div class="process"><span class="step">Sketch</span><span class="step">Final Art</span></div>
-        </div>
+      <article class="case">
+        <a href="case5.html">
+          <img src="https://source.unsplash.com/600x400/?illustration,art5" alt="Кейс 5">
+          <div class="inner">
+            <div class="kicker">Иллюстрации</div>
+            <h3>Иллюстрации для кампании</h3>
+            <p>Создание визуальных материалов и графики для digital и print.</p>
+          </div>
+        </a>
       </article>
 
-      <article class="case" data-title="Кейс 6">
-        <img class="visual" src="https://source.unsplash.com/600x400/?graphic,art6" alt="Кейс 6">
-        <div class="inner">
-          <div class="kicker">Digital</div>
-          <h3>Визуал для соцсетей</h3>
-          <p>Разработка графики и визуальных шаблонов для Instagram и VK.</p>
-          <div class="metrics"><div class="metric">+25% охват</div></div>
-          <div class="process"><span class="step">Дизайн</span><span class="step">Адаптация</span></div>
-        </div>
+      <article class="case">
+        <a href="case6.html">
+          <img src="https://source.unsplash.com/600x400/?graphic,art6" alt="Кейс 6">
+          <div class="inner">
+            <div class="kicker">Digital</div>
+            <h3>Визуал для соцсетей</h3>
+            <p>Разработка графики и визуальных шаблонов для Instagram и VK.</p>
+          </div>
+        </a>
       </article>
 
     </div>
   </section>
 
   <!-- About / Skills -->
-  <section id="about" class="about">
-    <div>
-      <h3>Обо мне</h3>
-      <p style="color:var(--muted)">Я — Андрей Яроцкий. Специализируюсь на брендинге, полиграфии и мерче. Управлял дизайн-производством, знаю тонкости допечатной подготовки и взаимодействия с типографиями.</p>
-      <h4 style="margin-top:16px">Навыки</h4>
-      <div class="skills">
-        <div class="skill">Adobe Illustrator</div>
-        <div class="skill">Adobe Photoshop</div>
-        <div class="skill">Adobe InDesign (prepress)</div>
-        <div class="skill">Figma (interface basics)</div>
-        <div class="skill">Mockups & dielines</div>
-        <div class="skill">Production control</div>
-      </div>
-      <h4 style="margin-top:16px">Что ищу</h4>
-      <p style="color:var(--muted)">Роль Senior / Lead в дизайн-команде: брендинг + производство. Готов к гибридному формату.</p>
-    </div>
-
-    <aside class="contact-card">
-      <img class="profile-photo" src="https://source.unsplash.com/600x600/?portrait,designer" alt="Андрей Яроцкий">
-      <div style="margin-top:12px">
-        <strong>Контакты</strong>
-        <p style="color:var(--muted);margin:6px 0">Телефон: <a href="tel:+79956079474">+7 995 607 94 74</a></p>
-        <p style="color:var(--muted);margin:6px 0">Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
-        <a class="download" href="https://spb.hh.ru/resume/2ea4ea49ff0df6faf00039ed1f317730574232" target="_blank">Скачать резюме</a>
-      </div>
-    </aside>
+  <section id="about" style="margin-top:40px">
+    <h3>Обо мне</h3>
+    <p>Я — Андрей Яроцкий. Специализируюсь на брендинге, полиграфии и мерче. Руководил дизайном, знаю тонкости допечатной подготовки и взаимодействия с типографиями.</p>
+    <h4>Навыки</h4>
+    <ul>
+      <li>Adobe Illustrator</li>
+      <li>Adobe Photoshop</li>
+      <li>Adobe InDesign (prepress)</li>
+      <li>Figma</li>
+      <li>Mockups & dielines</li>
+      <li>Production control</li>
+    </ul>
   </section>
 
-  <!-- Contact form -->
-  <section id="contacts" style="margin-top:28px">
-    <h3>Откликнуться / Заказ</h3>
-    <p style="color:var(--muted)">Можно написать прямо здесь — форма отправится на почту (при деплое на Netlify) или на почту по ссылке Mailto.</p>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="contact">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px">
-        <input name="name" placeholder="Имя" required style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
-        <input name="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #e6e6e6">
-        <input name
+  <!-- Contacts -->
+  <section id="contacts" style="margin-top:40px">
+    <h3>Контакты</h3>
+    <p>Телефон: +7 995 607 94 74</p>
+    <p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
+    <p>Behance / Instagram / Telegram: punk.print</p>
+  </section>
+
+</div>
+</body>
+</html>
