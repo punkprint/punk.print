@@ -4458,12 +4458,12 @@ td:last-child {
 }
 .socials-rail {
   position: fixed;
-  right: 40px;        /* отступ от правого края */
+  right: 40px;          /* расстояние от правого края */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px;            /* отступы между иконками */
   z-index: 1000;
 }
 
@@ -4474,7 +4474,7 @@ td:last-child {
 .icon-svg {
   width: 22px;
   height: 22px;
-  fill: #fff;
+  fill: #fff;           /* белые иконки */
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -4482,4 +4482,5 @@ td:last-child {
   transform: scale(1.2);
   opacity: 0.8;
 }
+
 
