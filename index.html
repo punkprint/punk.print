@@ -1,165 +1,343 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Андрей Яроцкий — графический дизайнер</title>
-<style>
-body{margin:0;font-family:Inter,sans-serif;background:#fbfbfb;color:#111}
-.container{max-width:1120px;margin:0 auto;padding:32px}
-.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:6px 0}
-.logo{width:64px;height:64px;background:#111;color:#fff;display:grid;place-items:center;border-radius:12px;font-weight:700;font-size:18px}
-.nav a{margin-left:12px;text-decoration:none;color:#111;font-weight:600}
-.hero{display:flex;gap:24px;align-items:center;margin-top:32px}
-.hero-text{flex:1}
-.hero-photo{flex:1}
-.hero-photo img{width:100%;border-radius:12px;object-fit:cover}
-@media(max-width:980px){.hero{flex-direction:column}}
-.cases{margin-top:40px}
-.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.case{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee;cursor:pointer}
-.case img{width:100%;height:300px;object-fit:cover}
-.case .inner{padding:16px}
-.kicker{font-size:12px;color:#6c6c6c;text-transform:uppercase;letter-spacing:.08em}
-.case h3{margin:8px 0 6px;font-size:18px}
-.case p{margin:0;color:#6c6c6c;font-size:14px}
-@media(max-width:980px){.case-grid{grid-template-columns:1fr}}
-/* Лайтбокс */
-#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;z-index:9999;flex-direction:column}
-#lightbox img{max-width:90%;max-height:70%;border-radius:12px;margin-bottom:16px}
-#lightbox .caption{color:#fff;text-align:center;margin-bottom:12px;font-size:16px}
-#lightbox .close{position:absolute;top:20px;right:30px;color:#fff;font-size:30px;font-weight:bold;cursor:pointer}
-#lightbox .nav-btn{position:absolute;top:50%;transform:translateY(-50%);font-size:50px;color:#fff;font-weight:bold;cursor:pointer;user-select:none}
-#lightbox .prev{left:20px}
-#lightbox .next{right:20px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Андрей Яроцкий — Портфолио и резюме</title>
+  <meta name="description" content="Андрей Яроцкий — Senior Graphic Designer / Art Director. Брендинг, digital, полиграфия. 13+ лет опыта. Санкт-Петербург. Удалёнка/гибрид." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://punkprint.github.io/punk.print/" />
+  <meta property="og:title" content="Андрей Яроцкий — Портфолио и резюме" />
+  <meta property="og:description" content="Брендинг, digital, полиграфия. 13+ лет опыта. Лучшие кейсы и резюме в одном месте." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://punkprint.github.io/punk.print/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/punkprint/punk.print/main/og-cover.jpg" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.7); }
+    .card { transition: transform .2s ease, box-shadow .2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(2,6,23,.15); }
+    .chip { border: 1px solid rgba(2,6,23,.12); }
+    .shadow-soft { box-shadow: 0 10px 40px rgba(2,6,23,.08); }
+    .is-selected { background: rgb(15 23 42); color: #fff; }
+  </style>
 </head>
-<body>
-<div class="container">
+<body id="top" class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/75 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3" aria-label="К началу страницы">
+        <div class="w-9 h-9 rounded-2xl bg-sky-500 grid place-items-center text-white font-bold">AY</div>
+        <span class="font-semibold">Андрей Яроцкий</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Основная навигация">
+        <a href="#about" class="hover:text-sky-600">Обо мне</a>
+        <a href="#skills" class="hover:text-sky-600">Навыки</a>
+        <a href="#experience" class="hover:text-sky-600">Опыт</a>
+        <a href="#portfolio" class="hover:text-sky-600">Портфолио</a>
+        <a href="#contacts" class="hover:text-sky-600">Контакты</a>
+      </nav>
+      <a href="#contacts" class="inline-flex items-center gap-2 bg-sky-600 hover:bg-sky-700 text-white text-sm px-4 py-2 rounded-xl">Связаться</a>
+    </div>
+  </header>
 
-<header class="header">
-<div class="logo">АЯ</div>
-<nav class="nav">
-  <a href="#top">Главная</a>
-  <a href="#work">Работы</a>
-  <a href="#about">Обо мне</a>
-  <a href="#contacts">Контакты</a>
-</nav>
-</header>
+  <!-- Hero -->
+  <section id="about" class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-sky-50 via-white to-sky-100"></div>
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-5 gap-10 items-center">
+      <div class="md:col-span-3">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Senior Graphic Designer / Art Director</h1>
+        <p class="mt-5 text-lg text-slate-700 max-w-2xl">13+ лет опыта в брендинге, digital и полиграфии. Создаю и поддерживаю дизайн-системы, гайдбуки и визуальные коммуникации для бизнеса. Санкт-Петербург. Формат: удалёнка или гибрид, полный день.</p>
+        <div class="mt-6 flex flex-wrap gap-3" aria-label="Навыки">
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Брендинг</span>
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Дизайн-система</span>
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Презентации</span>
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Полиграфия</span>
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Web / SMM</span>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#portfolio" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-3 rounded-2xl text-sm">Смотреть кейсы</a>
+          <a href="https://www.behance.net/punk_print" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-slate-300 text-sm hover:border-slate-400">Behance</a>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <div class="glass rounded-3xl p-6 shadow-soft">
+          <h2 class="font-semibold">Коротко</h2>
+          <ul class="mt-3 text-sm space-y-2">
+            <li>Опыт: 13+ лет (ведущий корпоративный дизайнер, арт-директор)</li>
+            <li>Инструменты: Figma, Photoshop, Illustrator, InDesign, Tilda</li>
+            <li>Английский: B1 (Intermediate)</li>
+            <li>Город: Санкт-Петербург</li>
+          </ul>
+          <div class="mt-5 border-t pt-4 text-sm">
+            <p class="text-slate-600">Сферы: логистика, печать, реклама, IT. Умею выстраивать процессы, вводить дизайнеров, поддерживать единый визуальный язык.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero" id="top">
-<div class="hero-text">
-<h1>Андрей Яроцкий</h1>
-<p>Графический дизайнер — брендинг, веб, мерч, полиграфия</p>
-<p>Опыт: Больше 10 лет в професси и на рынке</p>
-<p>Телефон: +7 995 607 94 74</p>
-<p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
-<p>Behance / Instagram / Telegram: @punk.print</p>
-</div>
-<div class="hero-photo">
-<img src="images/photo_2025-08-07_00-07-51.jpg" alt="Андрей Яроцкий">
-</div>
-</section>
+  <!-- Skills -->
+  <section id="skills" class="py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Ключевые навыки</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Брендинг и айдентика</h3>
+          <p class="mt-2 text-slate-600">Фирменный стиль, логотип, гайдбук, дизайн-система, мерч, сувенирка, носители бренда.</p>
+        </div>
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Digital и презентации</h3>
+          <p class="mt-2 text-slate-600">SMM-оформление, лендинги, иконки, инфографика, презентации и коммерческие предложения.</p>
+        </div>
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Полиграфия и предпечатка</h3>
+          <p class="mt-2 text-slate-600">Буклеты, брошюры, упаковка, наружная реклама. Глубокая предпечатная подготовка.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="work" class="cases">
-<h2>Ключевые кейсы</h2>
-<div class="case-grid">
+  <!-- Experience (сжатая витрина) -->
+  <section id="experience" class="py-14 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Опыт (коротко)</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <article class="card rounded-2xl border border-slate-200 p-6 bg-white">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Монополия</h3>
+            <span class="text-xs text-slate-500">2022–2024</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Ведущий корпоративный дизайнер → графический дизайнер. Брендинг продуктов, гайдбуки, презентации, мерч, поддержка дизайн-системы, участие в стратегии, онбординг дизайнеров.</p>
+        </article>
+        <article class="card rounded-2xl border border-slate-200 p-6 bg-white">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Ниена Принт</h3>
+            <span class="text-xs text-slate-500">2021–2022</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Графический дизайнер. Фирменные стили, упаковка, сувенирка, полиграфия, навигация и вывески, digital-носители.</p>
+        </article>
+        <article class="card rounded-2xl border border-slate-200 p-6 bg-white">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Правильная реклама</h3>
+            <span class="text-xs text-slate-500">2019</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Графический дизайнер. Наружная реклама, визуализация вывесок, подготовка к печати.</p>
+        </article>
+        <article class="card rounded-2xl border border-slate-200 p-6 bg-white">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">МИГ</h3>
+            <span class="text-xs text-slate-500">2017–2018</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Старший графический дизайнер. Ретушь, верстка, печать. Организация производственных процессов.</p>
+        </article>
+      </div>
+      <p class="mt-4 text-sm text-slate-500">Полное резюме: <a class="text-sky-700 underline" href="https://hh.ru/resume/2ea4ea49ff0df6faf00039ed1f317730574232" target="_blank" rel="noopener">hh.ru</a></p>
+    </div>
+  </section>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?merch,poster1","https://source.unsplash.com/800x500/?merch,poster2"]' data-caption="Ребрендинг мерча — обновление визуальной линии мерча.">
-<img src="https://source.unsplash.com/600x400/?merch,poster1" alt="Кейс 1">
-<div class="inner"><div class="kicker">Ребрендинг</div><h3>Ребрендинг мерча</h3><p>Краткое описание проекта...</p></div>
-</div>
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <h2 class="text-2xl md:text-3xl font-bold">Портфолио</h2>
+        <div class="flex gap-2 text-sm" role="tablist" aria-label="Фильтр работ">
+          <button type="button" class="chip px-3 py-1.5 rounded-xl is-selected" data-filter="all" aria-pressed="true">Все</button>
+          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="branding" aria-pressed="false">Брендинг</button>
+          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="digital" aria-pressed="false">Digital</button>
+          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="print" aria-pressed="false">Полиграфия</button>
+          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="illustration" aria-pressed="false">Иллюстрация</button>
+        </div>
+      </div>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?packaging,design2","https://source.unsplash.com/800x500/?packaging,design3"]' data-caption="Упаковка для локального бренда — серия упаковки и dielines.">
-<img src="https://source.unsplash.com/600x400/?packaging,design2" alt="Кейс 2">
-<div class="inner"><div class="kicker">Packaging</div><h3>Упаковка для бренда</h3><p>Краткое описание проекта...</p></div>
-</div>
+      <div id="grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Карточки генерируются скриптом ниже -->
+      </div>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?poster,graphic3","https://source.unsplash.com/800x500/?poster,graphic4"]' data-caption="Кампанийный визуал — серия плакатов для оффлайн и digital.">
-<img src="https://source.unsplash.com/600x400/?poster,graphic3" alt="Кейс 3">
-<div class="inner"><div class="kicker">Кампании</div><h3>Кампанийный визуал</h3><p>Краткое описание проекта...</p></div>
-</div>
+      <div class="mt-8 text-sm">
+        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-300 hover:border-slate-400" href="https://www.behance.net/punk_print" target="_blank" rel="noopener">Больше работ на Behance</a>
+      </div>
+    </div>
+  </section>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?design,art4","https://source.unsplash.com/800x500/?design,art5"]' data-caption="Брендинг для стартапа — логотип и визуальная идентичность.">
-<img src="https://source.unsplash.com/600x400/?design,art4" alt="Кейс 4">
-<div class="inner"><div class="kicker">Branding</div><h3>Брендинг для стартапа</h3><p>Краткое описание проекта...</p></div>
-</div>
+  <!-- Contacts -->
+  <section id="contacts" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Контакты</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Связаться</h3>
+          <ul class="mt-3 space-y-2">
+            <li><a class="text-sky-700 hover:underline" href="mailto:goldhands13@gmail.com">goldhands13@gmail.com</a></li>
+            <li><a class="text-sky-700 hover:underline" href="tel:+79956079474">+7&nbsp;(995)&nbsp;607-94-74</a></li>
+            <li><a class="text-sky-700 hover:underline" href="https://t.me/goldhands13" target="_blank" rel="noopener">Telegram: @goldhands13</a></li>
+          </ul>
+        </div>
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Профили</h3>
+          <ul class="mt-3 space-y-2">
+            <li><a class="text-sky-700 hover:underline" href="https://www.behance.net/punk_print" target="_blank" rel="noopener">Behance</a></li>
+            <li><a class="text-sky-700 hover:underline" href="https://punkprint.github.io/punk.print/" target="_blank" rel="noopener">GitHub Pages</a></li>
+          </ul>
+        </div>
+        <div class="card bg-white rounded-2xl p-6 border border-slate-200">
+          <h3 class="font-semibold">Формат работы</h3>
+          <p class="mt-3 text-slate-600">Удалёнка или гибрид, полный день. Готов к редким командировкам. Санкт-Петербург.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?illustration,art5","https://source.unsplash.com/800x500/?illustration,art6"]' data-caption="Иллюстрации для кампании — digital и print.">
-<img src="https://source.unsplash.com/600x400/?illustration,art5" alt="Кейс 5">
-<div class="inner"><div class="kicker">Иллюстрации</div><h3>Иллюстрации</h3><p>Краткое описание проекта...</p></div>
-</div>
+  <footer class="py-10 text-center text-xs text-slate-500">
+    © <span id="year"></span> Андрей Яроцкий. Все права и пиксели сохранены.
+  </footer>
 
-<div class="case" data-images='["https://source.unsplash.com/800x500/?graphic,art6","https://source.unsplash.com/800x500/?graphic,art7"]' data-caption="Визуал для соцсетей — шаблоны и графика.">
-<img src="https://source.unsplash.com/600x400/?graphic,art6" alt="Кейс 6">
-<div class="inner"><div class="kicker">Digital</div><h3>Визуал для соцсетей</h3><p>Краткое описание проекта...</p></div>
-</div>
+  <script>
+    // Проекты для витрины — только сильные, без проходняков
+    const projects = [
+      {
+        title: 'Монополия. Финансовые сервисы',
+        href: 'https://www.behance.net/gallery/211810777/logotip-finansovye-servisy',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/3c963e211810777.Y3JvcCwxMjQ3LDk3NSwwLDExNw.png',
+        tags: ['branding','digital'],
+        note: 'Айдентика, презентации, поддержка дизайн-системы'
+      },
+      {
+        title: 'Prime Print — логотип',
+        href: 'https://www.behance.net/gallery/116933363/Prime-Print-logo',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/2d1a8a116933363.Y3JvcCwxMjQ3LDk3NSwwLDExNw.jpg',
+        tags: ['branding','print'],
+        note: 'Фирменный стиль, логотип, мокапы'
+      },
+      {
+        title: 'Логотип МЧС (Фрунзенский район)',
+        href: 'https://www.behance.net/gallery/135399957/logotip-dlja-mchs-santk-peterburga-frunzenskogo-rajona',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/ff58a1135399957.Y3JvcCw4MjIsNjQzLDAsMA.jpg',
+        tags: ['branding'],
+        note: 'Эмблема, каска, шеврон'
+      },
+      {
+        title: 'Коммерческое предложение',
+        href: 'https://www.behance.net/gallery/211808043/primer-prezentacii',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/1a5c6f211808043.Y3JvcCwxMjQ3LDk3NSwwLDExNw.png',
+        tags: ['digital'],
+        note: 'Презентация, слайды для продаж'
+      },
+      {
+        title: 'Лэндинг для гида',
+        href: 'https://www.behance.net/gallery/128544779/lending-za-2-chasa-dlja-gida',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/e3b3b8128544779.Y3JvcCw4MjIsNjQzLDAsMA.jpg',
+        tags: ['digital'],
+        note: 'Мокапы на устройствах, быстрый прототип'
+      },
+      {
+        title: 'Идея для подарка — паттерн',
+        href: 'https://www.behance.net/gallery/116934447/ideja-dlja-podarka',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/8a9c7f116934447.Y3JvcCw4MjIsNjQzLDAsMA.jpg',
+        tags: ['print'],
+        note: 'Упаковка, декоративный паттерн'
+      },
+      {
+        title: 'Постер «Я люблю плакать»',
+        href: 'https://www.behance.net/gallery/211821055/print-ja-ljublju-plakat',
+        img: 'https://mir-s3-cdn-cf.behance.net/projects/404/26b0a9211821055.Y3JvcCw0NDQsMzQ3LDAsMA.png',
+        tags: ['illustration','print'],
+        note: 'Постер, провокационный креатив'
+      }
+    ];
 
-</div>
-</section>
+    const grid = document.getElementById('grid');
 
-<section id="about" style="margin-top:40px">
-<h3>Обо мне</h3>
-<p>Я — Андрей Яроцкий. Специализируюсь на брендинге, полиграфии и мерче. Руководил дизайном, знаю тонкости допечатной подготовки и взаимодействия с типографиями.</p>
-<h4>Навыки</h4>
-<ul>
-<li>Adobe Illustrator</li>
-<li>Adobe Photoshop</li>
-<li>Adobe InDesign (prepress)</li>
-<li>Figma</li>
-<li>Mockups & dielines</li>
-<li>Production control</li>
-</ul>
-</section>
+    function cardHTML(p) {
+      return `
+        <article class="card bg-white rounded-2xl overflow-hidden border border-slate-200" data-tags="${p.tags.join(' ')}">
+          <a href="${p.href}" target="_blank" rel="noopener" class="block">
+            <img loading="lazy" src="${p.img}" alt="${p.title}" class="w-full h-56 object-cover" />
+          </a>
+          <div class="p-5">
+            <h3 class="font-semibold">${p.title}</h3>
+            <p class="mt-1 text-sm text-slate-600">${p.note}</p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs" aria-label="Теги проекта">
+              ${p.tags.map(t => `<span class="chip px-2 py-1 rounded-lg">${t}</span>`).join('')}
+            </div>
+            <div class="mt-4">
+              <a href="${p.href}" target="_blank" rel="noopener" class="text-sky-700 text-sm underline">Открыть на Behance</a>
+            </div>
+          </div>
+        </article>`;
+    }
 
-<section id="contacts" style="margin-top:40px">
-<h3>Контакты</h3>
-<p>Телефон: +7 995 607 94 74</p>
-<p>Email: <a href="mailto:goldhands13eb063828-71f7-4374-959f-3635bf1f81d1@gmail.com">goldhands...@gmail.com</a></p>
-<p>Behance / Instagram / Telegram: punk.print</p>
-</section>
+    function render(filter = 'all') {
+      grid.innerHTML = projects
+        .filter(p => filter === 'all' ? true : p.tags.includes(filter))
+        .map(cardHTML)
+        .join('');
+    }
 
-</div>
+    // Initial render
+    render();
 
-<!-- Лайтбокс -->
-<div id="lightbox">
-<span class="close">&times;</span>
-<img src="" alt="Кейс">
-<div class="caption"></div>
-<span class="nav-btn prev">&#10094;</span>
-<span class="nav-btn next">&#10095;</span>
-</div>
+    // Filter buttons a11y + selection state
+    const buttons = document.querySelectorAll('[data-filter]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.classList.remove('is-selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-pressed', 'true');
+        render(btn.dataset.filter);
+      });
+      // keyboard support
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
 
-<script>
-let currentImages = [], currentIndex=0;
-const cases = document.querySelectorAll('.case');
-const lightbox = document.getElementById('lightbox');
-const lbImg = lightbox.querySelector('img');
-const lbCaption = lightbox.querySelector('.caption');
-const closeBtn = lightbox.querySelector('.close');
-const prevBtn = lightbox.querySelector('.prev');
-const nextBtn = lightbox.querySelector('.next');
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-cases.forEach(c=>c.addEventListener('click',()=>{
-  currentImages = JSON.parse(c.getAttribute('data-images'));
-  currentIndex=0;
-  lbImg.src=currentImages[currentIndex];
-  lbCaption.textContent=c.getAttribute('data-caption');
-  lightbox.style.display='flex';
-}));
+    // Noscript fallback content
+    document.addEventListener('DOMContentLoaded', () => {
+      const noscript = document.createElement('noscript');
+      noscript.innerHTML = '<p style="padding:1rem">Для просмотра работ включите JavaScript или откройте портфолио на <a href="https://www.behance.net/punk_print" target="_blank" rel="noopener">Behance</a>.</p>';
+      document.body.appendChild(noscript);
+    });
+  </script>
 
-closeBtn.addEventListener('click',()=>lightbox.style.display='none');
-lightbox.addEventListener('click',e=>{if(e.target===lightbox) lightbox.style.display='none'});
-
-prevBtn.addEventListener('click',()=>{
-  currentIndex = (currentIndex-1+currentImages.length)%currentImages.length;
-  lbImg.src=currentImages[currentIndex];
-});
-nextBtn.addEventListener('click',()=>{
-  currentIndex = (currentIndex+1)%currentImages.length;
-  lbImg.src=currentImages[currentIndex];
-});
-</script>
-
+  <!-- Schema.org Person for richer snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Андрей Яроцкий",
+    "jobTitle": "Senior Graphic Designer / Art Director",
+    "description": "Брендинг, digital, полиграфия. 13+ лет опыта.",
+    "url": "https://punkprint.github.io/punk.print/",
+    "email": "mailto:goldhands13@gmail.com",
+    "telephone": "+7-995-607-94-74",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Санкт-Петербург",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://www.behance.net/punk_print"
+    ]
+  }
+  </script>
 </body>
 </html>
