@@ -23,10 +23,9 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.7); }
     .card { transition: transform .2s ease, box-shadow .2s ease; }
     .card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(2,6,23,.15); }
-    .chip { border: 1px solid rgba(2,6,23,.12); }
+    .chip { border: 1px solid rgba(2,6,23,.12); border-radius: 12px; }
     .shadow-soft { box-shadow: 0 10px 40px rgba(2,6,23,.08); }
     .is-selected { background: rgb(15 23 42); color: #fff; }
 
@@ -81,11 +80,11 @@
         </h1>
         <p class="mt-5 text-lg text-slate-700 max-w-2xl">13+ лет опыта в брендинге, digital и полиграфии. Создаю и поддерживаю дизайн-системы, гайдбуки и визуальные коммуникации для бизнеса. Санкт-Петербург. Формат: удалёнка или гибрид, полный день.</p>
         <div class="mt-6 flex flex-wrap gap-3" aria-label="Навыки">
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Брендинг</span>
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Дизайн-система</span>
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Презентации</span>
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Полиграфия</span>
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Web / SMM</span>
+          <span class="chip px-3 py-1.5 text-sm">Брендинг</span>
+          <span class="chip px-3 py-1.5 text-sm">Дизайн-система</span>
+          <span class="chip px-3 py-1.5 text-sm">Презентации</span>
+          <span class="chip px-3 py-1.5 text-sm">Полиграфия</span>
+          <span class="chip px-3 py-1.5 text-sm">Web / SMM</span>
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#portfolio" class="group bg-slate-900 hover:bg-slate-800 text-white px-5 py-3 rounded-2xl text-sm inline-flex items-center gap-2">
@@ -97,7 +96,6 @@
           <a href="https://www.behance.net/punk_print" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-slate-300 text-sm hover:border-slate-400">Behance</a>
         </div>
       </div>
-      
       <!-- Фото -->
       <div class="md:col-span-2 flex justify-center reveal">
         <img src="https://placehold.co/300x300?text=Фото" alt="Андрей Яроцкий" class="rounded-3xl shadow-soft w-64 h-64 object-cover">
@@ -128,7 +126,7 @@
 
   <!-- Experience -->
   <section id="experience" class="py-14 bg-white border-y border-slate-200">
-    <div class="max-w-6xl mx_auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold reveal">Опыт (коротко)</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <article class="card rounded-2xl border border-slate-200 p-6 bg-white reveal">
@@ -170,11 +168,11 @@
       <div class="flex items-end justify-between gap-6 flex-wrap">
         <h2 class="text-2xl md:text-3xl font-bold reveal">Портфолио</h2>
         <div class="flex gap-2 text-sm" role="tablist" aria-label="Фильтр работ">
-          <button type="button" class="chip px-3 py-1.5 rounded-xl is-selected" data-filter="all" aria-pressed="true">Все</button>
-          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="branding" aria-pressed="false">Брендинг</button>
-          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="digital" aria-pressed="false">Digital</button>
-          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="print" aria-pressed="false">Полиграфия</button>
-          <button type="button" class="chip px-3 py-1.5 rounded-xl" data-filter="illustration" aria-pressed="false">Иллюстрация</button>
+          <button type="button" class="chip px-3 py-1.5 is-selected" data-filter="all" aria-pressed="true">Все</button>
+          <button type="button" class="chip px-3 py-1.5" data-filter="branding" aria-pressed="false">Брендинг</button>
+          <button type="button" class="chip px-3 py-1.5" data-filter="digital" aria-pressed="false">Digital</button>
+          <button type="button" class="chip px-3 py-1.5" data-filter="print" aria-pressed="false">Полиграфия</button>
+          <button type="button" class="chip px-3 py-1.5" data-filter="illustration" aria-pressed="false">Иллюстрация</button>
         </div>
       </div>
 
@@ -220,7 +218,7 @@
     © <span id="year"></span> Андрей Яроцкий. Все права и пиксели сохранены.
   </footer>
 
-  <!-- Modal for portfolio carousel -->
+  <!-- Modal -->
   <div id="modal" class="modal-backdrop" aria-hidden="true" aria-label="Просмотр кейса">
     <div class="carousel">
       <div class="carousel-header">
@@ -246,7 +244,7 @@
   </div>
 
   <script>
-    // Projects with in-place slides (carousel)
+    // ===== Projects =====
     const projects = [
       {
         title: 'Монополия. Финансовые сервисы',
@@ -313,7 +311,7 @@
         href: 'https://www.behance.net/gallery/211821055/print-ja-ljublju-plakat',
         img: 'https://mir-s3-cdn-cf.behance.net/projects/404/26b0a9211821055.Y3JvcCw0NDQsMzQ3LDAsMA.png',
         tags: ['illustration','print'],
-        note: 'Постер, провокационный креатив',
+        note: 'Провокационный постер',
         slides: [
           'https://mir-s3-cdn-cf.behance.net/projects/808/26b0a9211821055.Y3JvcCw0NDQsMzQ3LDAsMA.png'
         ]
@@ -355,16 +353,13 @@
       observeReveals();
     }
 
-    // Initial render
-    render();
-
-    // Filter buttons a11y + selection state
+    // ===== Filters =====
     const buttons = document.querySelectorAll('[data-filter]');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => {
           b.classList.remove('is-selected');
-        b.setAttribute('aria-pressed', 'false');
+          b.setAttribute('aria-pressed', 'false');
         });
         btn.classList.add('is-selected');
         btn.setAttribute('aria-pressed', 'true');
@@ -378,21 +373,28 @@
       });
     });
 
-    // Year
+    // ===== Year =====
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add('show');
-      });
-    }, { threshold: 0.16 });
-    function observeReveals(){
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // ===== Reveal on scroll with safe fallback =====
+    function showAllReveals() {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('show'));
     }
-    observeReveals();
+    function observeReveals(){
+      try {
+        if (!('IntersectionObserver' in window)) { showAllReveals(); return; }
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+        }, { threshold: 0.16, rootMargin: '0px 0px -10% 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        // На старте явно показываем хиро
+        document.querySelectorAll('#about .reveal').forEach(el => el.classList.add('show'));
+      } catch(e) {
+        showAllReveals();
+      }
+    }
 
-    // Modal logic
+    // ===== Modal logic =====
     const modal = document.getElementById('modal');
     const slideImg = document.getElementById('slideImage');
     const modalTitle = document.getElementById('modalTitle');
@@ -443,6 +445,14 @@
     nextBtn.addEventListener('click', () => { currentSlide++; updateSlide(); });
     document.getElementById('closeBtn').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // Запуск после загрузки DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      render();
+      observeReveals();
+    });
+
+    // Клавиатура
     document.addEventListener('keydown', (e) => {
       if (modal.classList.contains('open')) {
         if (e.key === 'Escape') closeModal();
@@ -452,6 +462,7 @@
     });
   </script>
 
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -462,14 +473,8 @@
     "url": "https://punkprint.github.io/punk.print/",
     "email": "mailto:goldhands13@gmail.com",
     "telephone": "+7-995-607-94-74",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Санкт-Петербург",
-      "addressCountry": "RU"
-    },
-    "sameAs": [
-      "https://www.behance.net/punk_print"
-    ]
+    "address": { "@type": "PostalAddress", "addressLocality": "Санкт-Петербург", "addressCountry": "RU" },
+    "sameAs": ["https://www.behance.net/punk_print"]
   }
   </script>
 </body>
