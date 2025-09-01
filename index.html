@@ -1,3 +1,6 @@
+Лови полный `index.html`. Чистый, самодостаточный, без внешних CSS/JS, всё по последним требованиям. Вставляй в репозиторий и поехали.
+
+```html
 <!doctype html>
 <html lang="ru">
 <head>
@@ -29,12 +32,15 @@
     .chip { border: 1px solid rgba(2,6,23,.12); }
     .shadow-soft { box-shadow: 0 10px 40px rgba(2,6,23,.08); }
     .is-selected { background: rgb(15 23 42); color: #fff; }
+
     /* Reveal on scroll */
     .reveal { opacity: 0; transform: translateY(12px); transition: all .6s ease; }
     .reveal.show { opacity: 1; transform: none; }
+
     /* CTA arrow wiggle */
     @keyframes nudge { 0%,100%{transform: translateY(0)} 50%{transform: translateY(3px)} }
     .nudge { animation: nudge 1.6s infinite; }
+
     /* Modal */
     .modal-backdrop { position: fixed; inset: 0; background: rgba(2,6,23,.6); display:none; align-items:center; justify-content:center; z-index: 100; }
     .modal-backdrop.open { display:flex; }
@@ -76,10 +82,10 @@
         <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
           Андрей Яроцкий — Senior Graphic Designer / Art Director
         </h1>
-        <p class="mt-5 text-lg text-slate-700 max-w-2xl">13+ лет опыта в брендинге, digital и полиграфии. Создаю и поддерживаю дизайн‑системы, гайдбуки и визуальные коммуникации для бизнеса. Санкт‑Петербург. Формат: удалёнка или гибрид, полный день.</p>
+        <p class="mt-5 text-lg text-slate-700 max-w-2xl">13+ лет опыта в брендинге, digital и полиграфии. Создаю и поддерживаю дизайн-системы, гайдбуки и визуальные коммуникации для бизнеса. Санкт-Петербург. Формат: удалёнка или гибрид, полный день.</p>
         <div class="mt-6 flex flex-wrap gap-3" aria-label="Навыки">
           <span class="chip px-3 py-1.5 rounded-xl text-sm">Брендинг</span>
-          <span class="chip px-3 py-1.5 rounded-xl text-sm">Дизайн‑система</span>
+          <span class="chip px-3 py-1.5 rounded-xl text-sm">Дизайн-система</span>
           <span class="chip px-3 py-1.5 rounded-xl text-sm">Презентации</span>
           <span class="chip px-3 py-1.5 rounded-xl text-sm">Полиграфия</span>
           <span class="chip px-3 py-1.5 rounded-xl text-sm">Web / SMM</span>
@@ -109,11 +115,11 @@
       <div class="mt-6 grid md:grid-cols-3 gap-6 text-sm">
         <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
           <h3 class="font-semibold">Брендинг и айдентика</h3>
-          <p class="mt-2 text-slate-600">Фирменный стиль, логотип, гайдбук, дизайн‑система, мерч, сувенирка, носители бренда.</p>
+          <p class="mt-2 text-slate-600">Фирменный стиль, логотип, гайдбук, дизайн-система, мерч, сувенирка, носители бренда.</p>
         </div>
         <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
           <h3 class="font-semibold">Digital и презентации</h3>
-          <p class="mt-2 text-slate-600">SMM‑оформление, лендинги, иконки, инфографика, презентации и коммерческие предложения.</p>
+          <p class="mt-2 text-slate-600">SMM-оформление, лендинги, иконки, инфографика, презентации и коммерческие предложения.</p>
         </div>
         <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
           <h3 class="font-semibold">Полиграфия и предпечатка</h3>
@@ -125,7 +131,7 @@
 
   <!-- Experience -->
   <section id="experience" class="py-14 bg-white border-y border-slate-200">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-6xl mx_auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold reveal">Опыт (коротко)</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <article class="card rounded-2xl border border-slate-200 p-6 bg-white reveal">
@@ -133,17 +139,17 @@
             <h3 class="font-semibold">Монополия</h3>
             <span class="text-xs text-slate-500">2022–2024</span>
           </div>
-          <p class="mt-2 text-sm text-slate-600">Ведущий корпоративный дизайнер → графический дизайнер. Брендинг продуктов, гайдбуки, презентации, мерч, поддержка дизайн‑системы, участие в стратегии, онбординг дизайнеров.</p>
+          <p class="mt-2 text-sm text-slate-600">Ведущий корпоративный дизайнер → графический дизайнер. Брендинг продуктов, гайдбуки, презентации, мерч, поддержка дизайн-системы, участие в стратегии, онбординг дизайнеров.</p>
         </article>
         <article class="card rounded-2xl border border-slate-200 p-6 bg-white reveal">
           <div class="flex items-center justify-between">
             <h3 class="font-semibold">Ниена Принт</h3>
             <span class="text-xs text-slate-500">2021–2022</span>
           </div>
-          <p class="mt-2 text-sm text-slate-600">Графический дизайнер. Фирменные стили, упаковка, сувенирка, полиграфия, навигация и вывески, digital‑носители.</p>
+          <p class="mt-2 text-sm text-slate-600">Графический дизайнер. Фирменные стили, упаковка, сувенирка, полиграфия, навигация и вывески, digital-носители.</p>
         </article>
         <article class="card rounded-2xl border border-slate-200 p-6 bg-white reveal">
-          <div class="flex items-center justify между">
+          <div class="flex items-center justify-between">
             <h3 class="font-semibold">Правильная реклама</h3>
             <span class="text-xs text-slate-500">2019</span>
           </div>
@@ -154,7 +160,7 @@
             <h3 class="font-semibold">МИГ</h3>
             <span class="text-xs text-slate-500">2017–2018</span>
           </div>
-          <p class="mt-2 text см text-slate-600">Старший графический дизайнер. Ретушь, верстка, печать. Организация производственных процессов.</p>
+          <p class="mt-2 text-sm text-slate-600">Старший графический дизайнер. Ретушь, верстка, печать. Организация производственных процессов.</p>
         </article>
       </div>
       <p class="mt-4 text-sm text-slate-500">Полное резюме: <a class="text-sky-700 underline" href="https://hh.ru/resume/2ea4ea49ff0df6faf00039ed1f317730574232" target="_blank" rel="noopener">hh.ru</a></p>
@@ -194,7 +200,7 @@
           <h3 class="font-semibold">Связаться</h3>
           <ul class="mt-3 space-y-2">
             <li><a class="text-sky-700 hover:underline" href="mailto:goldhands13@gmail.com">goldhands13@gmail.com</a></li>
-            <li><a class="text-sky-700 hover:underline" href="tel:+79956079474">+7&nbsp;(995)&nbsp;607‑94‑74</a></li>
+            <li><a class="text-sky-700 hover:underline" href="tel:+79956079474">+7&nbsp;(995)&nbsp;607-94-74</a></li>
             <li><a class="text-sky-700 hover:underline" href="https://t.me/punk_print" target="_blank" rel="noopener">Telegram: @punk_print</a></li>
           </ul>
         </div>
@@ -207,7 +213,7 @@
         </div>
         <div class="card bg-white rounded-2xl p-6 border border-slate-200 reveal">
           <h3 class="font-semibold">Формат работы</h3>
-          <p class="mt-3 text-slate-600">Удалёнка или гибрид, полный день. Готов к редким командировкам. Санкт‑Петербург.</p>
+          <p class="mt-3 text-slate-600">Удалёнка или гибрид, полный день. Готов к редким командировкам. Санкт-Петербург.</p>
         </div>
       </div>
     </div>
@@ -250,7 +256,7 @@
         href: 'https://www.behance.net/gallery/211810777/logotip-finansovye-servisy',
         img: 'https://mir-s3-cdn-cf.behance.net/projects/404/3c963e211810777.Y3JvcCwxMjQ3LDk3NSwwLDExNw.png',
         tags: ['branding','digital'],
-        note: 'Айдентика, презентации, поддержка дизайн‑системы',
+        note: 'Айдентика, презентации, поддержка дизайн-системы',
         slides: [
           'https://mir-s3-cdn-cf.behance.net/projects/808/3c963e211810777.Y3JvcCwxMjQ3LDk3NSwwLDExNw.png'
         ]
@@ -352,14 +358,16 @@
       observeReveals();
     }
 
+    // Initial render
     render();
 
+    // Filter buttons a11y + selection state
     const buttons = document.querySelectorAll('[data-filter]');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => {
           b.classList.remove('is-selected');
-          b.setAttribute('aria-pressed', 'false');
+        b.setAttribute('aria-pressed', 'false');
         });
         btn.classList.add('is-selected');
         btn.setAttribute('aria-pressed', 'true');
@@ -373,6 +381,7 @@
       });
     });
 
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Reveal on scroll
@@ -468,3 +477,4 @@
   </script>
 </body>
 </html>
+```
