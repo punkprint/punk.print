@@ -69,19 +69,10 @@
           <a href="https://www.behance.net/punk_print" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl border border-slate-300 text-sm hover:border-slate-400">Behance</a>
         </div>
       </div>
-      <div class="md:col-span-2">
-        <div class="glass rounded-3xl p-6 shadow-soft">
-          <h2 class="font-semibold">Коротко</h2>
-          <ul class="mt-3 text-sm space-y-2">
-            <li>Опыт: 13+ лет (ведущий корпоративный дизайнер, арт-директор)</li>
-            <li>Инструменты: Figma, Photoshop, Illustrator, InDesign, Tilda</li>
-            <li>Английский: B1 (Intermediate)</li>
-            <li>Город: Санкт-Петербург</li>
-          </ul>
-          <div class="mt-5 border-t pt-4 text-sm">
-            <p class="text-slate-600">Сферы: логистика, печать, реклама, IT. Умею выстраивать процессы, вводить дизайнеров, поддерживать единый визуальный язык.</p>
-          </div>
-        </div>
+      
+      <!-- Фото -->
+      <div class="md:col-span-2 flex justify-center">
+        <img src="https://placehold.co/300x300?text=Фото" alt="Андрей Яроцкий" class="rounded-3xl shadow-soft w-64 h-64 object-cover">
       </div>
     </div>
   </section>
@@ -107,7 +98,7 @@
     </div>
   </section>
 
-  <!-- Experience (сжатая витрина) -->
+  <!-- Experience -->
   <section id="experience" class="py-14 bg-white border-y border-slate-200">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold">Опыт (коротко)</h2>
@@ -202,7 +193,6 @@
   </footer>
 
   <script>
-    // Проекты для витрины — только сильные, без проходняков
     const projects = [
       {
         title: 'Монополия. Финансовые сервисы',
@@ -283,10 +273,8 @@
         .join('');
     }
 
-    // Initial render
     render();
 
-    // Filter buttons a11y + selection state
     const buttons = document.querySelectorAll('[data-filter]');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -298,7 +286,6 @@
         btn.setAttribute('aria-pressed', 'true');
         render(btn.dataset.filter);
       });
-      // keyboard support
       btn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -307,18 +294,9 @@
       });
     });
 
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Noscript fallback content
-    document.addEventListener('DOMContentLoaded', () => {
-      const noscript = document.createElement('noscript');
-      noscript.innerHTML = '<p style="padding:1rem">Для просмотра работ включите JavaScript или откройте портфолио на <a href="https://www.behance.net/punk_print" target="_blank" rel="noopener">Behance</a>.</p>';
-      document.body.appendChild(noscript);
-    });
   </script>
 
-  <!-- Schema.org Person for richer snippets -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
