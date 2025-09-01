@@ -4456,31 +4456,53 @@ td:last-child {
         right: -2rem;
     }
 }
+
+
+
+
+/* === Socials rail (без обрезаний) === */
 .socials-rail {
-  position: fixed;
-  right: 40px;          /* расстояние от правого края */
+  position: absolute;
+  right: 40px;                 /* подгони под макет */
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;            /* отступы между иконками */
+  align-items: center;
+  gap: 22px;
   z-index: 1000;
+  overflow: visible;           /* важно */
 }
 
 .social-link {
   text-decoration: none;
+  line-height: 0;
+  overflow: visible;           /* важно */
+}
+
+.icon-box {
+  width: 28px;                 /* единая «коробка» иконки */
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;           /* важно */
 }
 
 .icon-svg {
-  width: 22px;
-  height: 22px;
-  fill: #fff;           /* белые иконки */
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  width: 24px;                 /* базовый визуальный размер */
+  height: 24px;
+  display: block;
+  fill: #fff;
+  overflow: visible;           /* ключ к анти-обрезанию */
+  transition: transform .18s ease, opacity .18s ease;
 }
 
+
+
 .social-link:hover .icon-svg {
-  transform: scale(1.2);
-  opacity: 0.8;
+  transform: scale(1.14);
+  opacity: .86;
 }
 
 
