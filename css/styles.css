@@ -1789,7 +1789,7 @@ img,
     flex-flow      : row wrap;
     justify-content: center;
     align-items    : center;
-    background     : var(--color-preloader-bg);
+    background     : var(--color-black);
     z-index        : 500;
     height         : 100vh;
     width          : 100%;
@@ -3527,22 +3527,32 @@ td:last-child {
  * -------------------------------------------------------------------- */
 .s-intro__social {
     z-index : 2;
-    display : block;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--vspace-0_75);
+
     position: absolute;
-    bottom  : calc(var(--vspace-2) + var(--vspace-1_75) + 12rem);
-    right   : calc(var(--gutter) + var(--vspace-1_25));
+    /* приподняли чуть выше относительно линии */
+    bottom  : calc(var(--vspace-2) + var(--vspace-1_75) + 14rem);
+
+    /* смещаем так, чтобы центр совпадал с линией скролла */
+    right   : calc(var(--gutter) + var(--vspace-1_25) + 2px);
 }
 
 .s-intro__social li {
-    padding-right: 0;
-    margin-right : 0;
-    margin-bottom: var(--vspace-0_625);
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .s-intro__social svg {
-    height: var(--vspace-0_75);
     width : var(--vspace-0_75);
+    height: var(--vspace-0_75);
+    display: block;
 }
+
+
 
 .s-intro__social svg path,
 .s-intro__social svg circle {
@@ -4278,11 +4288,7 @@ td:last-child {
     left            : var(--gutter);
 }
 
-.s-footer__social svg path,
-.s-footer__social svg circle {
-    fill      : var(--color-gray-15);
-    transition: all 0.5s;
-}
+
 
 .s-footer .link-list {
     list-style : none;
@@ -4504,5 +4510,4 @@ td:last-child {
   transform: scale(1.14);
   opacity: .86;
 }
-
 
